@@ -13,6 +13,7 @@ python code/validate_deposit.py
 python code/prepare_figure3_records.py --out figure3_source
 # Independent residual calibration and archived profile comparisons
 python code/residual_calibration.py --out residual_calibration_run
+python code/audit_legacy_residual_fits.py --out residual_refit_audit
 # Full analysis; overwrites numerical files in code/output
 python code/run_all.py
 ```
@@ -35,6 +36,7 @@ The full analysis previously took about one hour; hardware affects runtime.
 | `guard_benchmark.py` | 1,000 labelled inversions: five classes and two error models |
 | `refit_factorial.py` | Sensitivity to refit starting point, iterations and damping |
 | `graded_benchmark.py` | 1,140 graded inversions: precision, priors and interval coverage |
+| `audit_legacy_residual_fits.py` | Paired audit of the same 240 original residual observations; separates suboptimal one-start fits from covariance error |
 | `residual_calibration.py` | 8,000 separately seeded residual-calibration/validation cases; 48 independent fit checks; archived interval and cap checks |
 | `misspecification_checks.py` | Dilation; 240 residual-diagnostic and 60 unknown-geometry inversions |
 | `benchmark_tables.py` | Final bound-aware decisions and conditional coverage summaries |
@@ -65,6 +67,13 @@ Residual calibration averages over the stated synthetic design and assumes
 covariance anchored to the generating geometry; it is not a per-fire bootstrap. Current Figure 3b pools the 2,140 archived paired
 labelled and graded records. This pooled display includes different assumptions
 and unidentifiable cases; it is not an overall accuracy or coverage estimate.
+
+The residual-refit audit reproduces the four original flag counts at z>2.33,
+then uses amplitude-profiled shape optimisation on the same observations.
+Matched independent/correlated flag counts change from 4/60 and 2/60 to 1/60
+and 0/60. These refits do not add independent trials or overwrite the original
+archive. A residual diagnostic requires a reliable fit before its statistical
+threshold can be interpreted.
 
 ## Experimental source data
 

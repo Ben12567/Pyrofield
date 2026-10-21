@@ -1,0 +1,47 @@
+{
+  "scope": "Paired refit audit of the same 240 original observations; not independent new validation cases.",
+  "legacy_flag_counts_match_archive": true,
+  "settings": {
+    "true_ell0.3_assumed_iid": {
+      "n": 60,
+      "seed": 31367,
+      "legacy_flagged": 60,
+      "profiled_flagged": 60,
+      "legacy_cost_exceeds_profiled_by_gt1e_5": 1,
+      "legacy_flagged_but_profiled_unflagged": 0,
+      "max_legacy_excess_chi2": 422.94354858748636,
+      "max_profiled_z": 15.246996206289507
+    },
+    "true_ell0.1_assumed_0.1": {
+      "n": 60,
+      "seed": 31447,
+      "legacy_flagged": 2,
+      "profiled_flagged": 0,
+      "legacy_cost_exceeds_profiled_by_gt1e_5": 2,
+      "legacy_flagged_but_profiled_unflagged": 2,
+      "max_legacy_excess_chi2": 426.74214772129585,
+      "max_profiled_z": 2.1166864756721835
+    },
+    "true_ell0.3_assumed_0.1": {
+      "n": 60,
+      "seed": 31467,
+      "legacy_flagged": 12,
+      "profiled_flagged": 11,
+      "legacy_cost_exceeds_profiled_by_gt1e_5": 2,
+      "legacy_flagged_but_profiled_unflagged": 1,
+      "max_legacy_excess_chi2": 313.17069695562765,
+      "max_profiled_z": 3.490309544901406
+    },
+    "true_iid_assumed_iid": {
+      "n": 60,
+      "seed": 31337,
+      "legacy_flagged": 4,
+      "profiled_flagged": 1,
+      "legacy_cost_exceeds_profiled_by_gt1e_5": 3,
+      "legacy_flagged_but_profiled_unflagged": 3,
+      "max_legacy_excess_chi2": 838.2993028767797,
+      "max_profiled_z": 2.7361252425554485
+    }
+  },
+  "interpretation": "A failed search for the minimum can produce residual correlation. Separate optimiser checks from threshold calibration; neither diagnoses shape-law error that is exactly compensated."
+}

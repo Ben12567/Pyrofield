@@ -77,3 +77,12 @@ exact version used in the manuscript.
 Claude (Anthropic) assisted analysis-code development. OpenAI Codex (OpenAI)
 assisted checking, documentation and manuscript figure preparation. The tools
 did not generate primary experimental observations or benchmark values.
+
+## Audit of the original residual fits
+
+`audit_legacy_residual_fits.py` reproduces the 240 original observations and
+one-start LM counts, then checks the fit by profiling out the linear amplitude.
+Eight old solutions were suboptimal. Correctly specified independent/correlated
+cases change from 4/60 and 2/60 residual flags to 1/60 and 0/60, respectively.
+The paired refits are archived separately and are not independent new trials.
+The original archived values and manuscript figure coordinates are preserved.

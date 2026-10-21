@@ -25,7 +25,7 @@ def statistic(r):
     r=r.reshape(4,K);r=r-r.mean(axis=1,keepdims=True)
     return float(np.mean(np.sum(r*np.roll(r,1,axis=1),axis=1)/np.sum(r*r,axis=1))*np.sqrt(4*K))
 
-def one(rng,ell_true,ell_assumed,check_reference=False):
+def one(rng,ell_true,ell_assumed,check_reference=False,check_legacy=False):
     R0,U=float(rng.uniform(.06,.16)),float(rng.uniform(2,7))
     Rh,L=m.head_rate(R0,U),float(m.L_anderson(U))
     times=1000/Rh*np.array([.25,.5,.75,1.])
@@ -50,10 +50,11 @@ def one(rng,ell_true,ell_assumed,check_reference=False):
     if not (.01<R0_hat<1 and .2<U_hat<m.U_C):
         raise RuntimeError('Fitted parameters outside the interior benchmark family')
     comparison={}
-    if check_reference:
+    if check_reference or check_legacy:
         def canonical(p):
             rh=m.head_rate(np.exp(p[0]),np.exp(p[1]));length=m.L_anderson(np.exp(p[1]))
             return whiten(ass(rh,length)-y)
+    if check_reference:
         starts=[np.log([.1,2.]),np.log([.1,6.])]
         ref=min((least_squares(canonical,start,bounds=(np.log([.01,.2]),np.log([1.,20.])),
                               xtol=1e-12,ftol=1e-12,gtol=1e-12) for start in starts),key=lambda q:q.cost)
@@ -62,6 +63,16 @@ def one(rng,ell_true,ell_assumed,check_reference=False):
         if cost_error>1e-6 or z_error>1e-4:
             raise RuntimeError(f'Reference fit disagreement: {cost_error}, {z_error}')
         comparison={'reference_cost_absolute_error':cost_error,'reference_z_absolute_error':z_error}
+    if check_legacy:
+        # Reproduce the original solve order, as LM can follow different local
+        # paths after roundoff changes in a precomputed inverse multiplication.
+        def legacy_residual(p):
+            u=np.exp(p[1])
+            model=np.concatenate([m.front_radius(m.head_rate(np.exp(p[0]),u),m.L_anderson(u),t,PSI) for t in times])
+            return ass.whiten(model-y)
+        legacy=least_squares(legacy_residual,np.log([.1,4.]),method='lm')
+        comparison.update(legacy_z=statistic(legacy.fun),legacy_chi2=float(2*legacy.cost),
+                          legacy_U_hat=float(np.exp(legacy.x[1])),legacy_success=bool(legacy.success))
     return {'R0_true':R0,'U_true':U,'ell_true':ell_true,'ell_assumed':ell_assumed,
             'z':statistic(r),'chi2':float(r@r),'L_hat':float(1+np.exp(fit.x)),
             'Rh_hat':Rh_hat,'U_hat':U_hat,'R0_hat':R0_hat,
