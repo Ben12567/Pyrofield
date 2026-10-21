@@ -1,0 +1,44 @@
+{
+  "title": "A good fire fit is not enough: code and outputs",
+  "upload_type": "software",
+  "description": "Analysis scripts, archived numerical records and digitised experimental-fire isochrones for the manuscript A good fire fit is not enough. Figure 3b uses 2,140 archived paired estimates; Figure 4 uses source CSIRO maps. PowerPoint layouts and the upstream raw dataset are supplied separately. No publication or DOI is claimed.",
+  "creators": [
+    {
+      "name": "Dong, Xin",
+      "affiliation": "School of Rescue and Command, China People's Police University; Emergency Rescue Technology Key Laboratory of Hebei Province"
+    },
+    {
+      "name": "Yan, Tuo",
+      "affiliation": "School of Rescue and Command, China People's Police University"
+    },
+    {
+      "name": "Shen, Jun",
+      "affiliation": "School of Rescue and Command, China People's Police University"
+    },
+    {
+      "name": "Li, Chiyuan",
+      "affiliation": "School of Rescue and Command, China People's Police University"
+    },
+    {
+      "name": "Zhang, Tianwei",
+      "affiliation": "School of Rescue and Command, China People's Police University"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "wildfire spread",
+    "identifiability",
+    "equifinality",
+    "data assimilation",
+    "profile likelihood",
+    "fire perimeter"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.25919/ycd3-w209",
+      "relation": "references",
+      "resource_type": "dataset"
+    }
+  ],
+  "version": "2026.10.21"
+}

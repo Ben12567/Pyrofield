@@ -1,0 +1,87 @@
+{
+ "dilation_refit": {
+  "U0=2.75": {
+   "known_ignition": {
+    "wind_bias_pct": -13.356264134742085,
+    "chi2_at_fit": 11.420498026763127,
+    "N": 288,
+    "gof_power_5pct": 0.12279884260032028
+   },
+   "unknown_ignition": {
+    "wind_bias_pct": -8.565722954738412,
+    "chi2_at_fit": 1.4211148073017994,
+    "N": 288,
+    "gof_power_5pct": 0.056689538064669746
+   },
+   "axis_ratio_inversion_pct": -7.503019776012964
+  },
+  "U0=4.0": {
+   "known_ignition": {
+    "wind_bias_pct": -14.543831495831643,
+    "chi2_at_fit": 15.788873686454798,
+    "N": 288,
+    "gof_power_5pct": 0.16287971775396734
+   },
+   "unknown_ignition": {
+    "wind_bias_pct": -11.43902387157786,
+    "chi2_at_fit": 3.6341395157472522,
+    "N": 288,
+    "gof_power_5pct": 0.06837222999029562
+   },
+   "axis_ratio_inversion_pct": -9.158408653678606
+  },
+  "U0=5.5": {
+   "known_ignition": {
+    "wind_bias_pct": -16.729137600885117,
+    "chi2_at_fit": 24.560278331384374,
+    "N": 288,
+    "gof_power_5pct": 0.26297484688523104
+   },
+   "unknown_ignition": {
+    "wind_bias_pct": -15.269957707336987,
+    "chi2_at_fit": 9.107969561442427,
+    "N": 288,
+    "gof_power_5pct": 0.10438223660264143
+   },
+   "axis_ratio_inversion_pct": -11.550210596950794
+  }
+ },
+ "residual_diagnostic": {
+  "true_ell0.3_assumed_iid": {
+   "n": 60,
+   "flagged_z>2.33": 60,
+   "median_z": 13.452533674551052
+  },
+  "true_ell0.1_assumed_0.1": {
+   "n": 60,
+   "flagged_z>2.33": 2,
+   "median_z": -0.47527265496983506
+  },
+  "true_ell0.3_assumed_0.1": {
+   "n": 60,
+   "flagged_z>2.33": 12,
+   "median_z": 1.366919480157051
+  },
+  "true_iid_assumed_iid": {
+   "n": 60,
+   "flagged_z>2.33": 4,
+   "median_z": -0.21246730839242933
+  }
+ },
+ "functional_form_linear_vs_anderson": {
+  "k_LB": 0.3658917444350047,
+  "U0=2.0": 29.589403184205487,
+  "U0=3.0": 12.246670813529592,
+  "U0=4.0": 0.0,
+  "U0=5.0": -9.267130121473667,
+  "U0=6.0": -16.60302948575837,
+  "U0=7.0": -22.59856601640553
+ },
+ "unknown_bearing_ignition_s0.1_sig0.03": {
+  "n": 60,
+  "determined_d30": 56,
+  "coverage": 55,
+  "median_abs_err_pct": 3.560749370486356,
+  "median_half_width_log": 0.1222192694794819
+ }
+}

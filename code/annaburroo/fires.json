@@ -1,0 +1,178 @@
+{
+ "dataset": "1986 Annaburroo Experimental Grassland Fire Data, CSIRO Data Access Portal, doi:10.25919/ycd3-w209 (CC BY 4.0); Gould, Cruz and Sullivan (2024), Int. J. Wildland Fire 33, WF23100",
+ "selection": "Point-ignition fires (IgnLngth.m = 0) whose head travelled at least 60 m (final CumDist.m) and whose head-fire direction (FireDir.deg) stayed within a 50-degree range; isochrones digitised where the drawn line could be followed on at least one full flank and the head; the summary isochrone of a fire is its latest isochrone digitised on both flanks",
+ "midflame_ratio": {
+  "E1": 0.896,
+  "T1": 0.925,
+  "source": "median MidFlwind.ms / 2mWind.ms of the line-ignition plots with the same fuel treatment (Plot_Average_Data.csv)"
+ },
+ "fires": {
+  "CS04": {
+   "map": "C04/C04_Fire Isochrones_A.jpg",
+   "px_per_m": 23.5,
+   "scale_source": "tabulated head distances",
+   "ignition_px": [
+    4210,
+    5780
+   ],
+   "curves": {
+    "t215": 215,
+    "t194": 194,
+    "t173": 173
+   },
+   "search_px": 18,
+   "jump_px": 8,
+   "wind_log": "C04/C04_2mwind.csv",
+   "plot": "C04",
+   "neighbours": "line fire C04 (70 m) lit 60 s later in the same plot",
+   "plot_line_fires": [
+    "C04"
+   ]
+  },
+  "ES12": {
+   "map": "E12/E12_Fire Isochrones.jpg",
+   "px_per_m": 16.3,
+   "scale_source": "tabulated head distances",
+   "ignition_px": [
+    2714,
+    3098
+   ],
+   "curves": {
+    "t223": 223,
+    "t182": 182
+   },
+   "search_px": 25,
+   "jump_px": 10,
+   "wind_log": "E12/E12_2mwind.csv",
+   "plot": "E12",
+   "neighbours": "line fire E12 (100 m) lit 10 s earlier in the same plot",
+   "plot_line_fires": [
+    "E12"
+   ]
+  },
+  "F213": {
+   "map": "F21/F21_Fire Isochrones.jpg",
+   "px_per_m": 16.2,
+   "scale_source": "plot-width arrow (210 m)",
+   "ignition_px": [
+    3485,
+    610
+   ],
+   "curves": {
+    "t428b": 428,
+    "t372": 372,
+    "t372b": 372
+   },
+   "search_px": 28,
+   "jump_px": 12,
+   "wind_log": "F21/F21_2mwind.csv",
+   "plot": "F21",
+   "one_flank": [
+    "t428b"
+   ],
+   "neighbours": "line fires F211 (100 m) and F212 (50 m) lit at the same time in the same plot",
+   "plot_line_fires": [
+    "F211",
+    "F212"
+   ]
+  },
+  "F223": {
+   "map": "F22/F22_Fire Isochrones.jpg",
+   "px_per_m": 15.91,
+   "scale_source": "plot-width arrow (210 m)",
+   "ignition_px": [
+    3700,
+    778
+   ],
+   "curves": {
+    "t294": 294,
+    "t294b": 294,
+    "t238": 238,
+    "t238b": 238
+   },
+   "search_px": 22,
+   "jump_px": 10,
+   "wind_log": "F22/F22_2mwind.csv",
+   "plot": "F22",
+   "neighbours": "line fires F221 (100 m) and F222 (50 m) lit at the same time in the same plot",
+   "plot_line_fires": [
+    "F221",
+    "F222"
+   ]
+  },
+  "F251": {
+   "map": "F20_F25/F20_F25_Fire Isochrones.jpg",
+   "px_per_m": 12.3,
+   "scale_source": "tabulated head distances",
+   "ignition_px": [
+    2515,
+    6097
+   ],
+   "curves": {
+    "t229": 229,
+    "t229b": 229
+   },
+   "search_px": 30,
+   "jump_px": 10,
+   "wind_log": "F20_F25/F25_2mwind.csv",
+   "plot": "F25",
+   "neighbours": "point fires F252 and F253 lit at the same time; line fire F20 lit 300 s later",
+   "plot_line_fires": [
+    "F20"
+   ]
+  },
+  "F252": {
+   "map": "F20_F25/F20_F25_Fire Isochrones.jpg",
+   "px_per_m": 12.3,
+   "scale_source": "tabulated head distances",
+   "ignition_px": [
+    2390,
+    5008
+   ],
+   "curves": {
+    "t229": 229
+   },
+   "search_px": 22,
+   "jump_px": 10,
+   "wind_log": "F20_F25/F25_2mwind.csv",
+   "plot": "F25",
+   "neighbours": "point fires F251 and F253 lit at the same time; line fire F20 lit 300 s later",
+   "plot_line_fires": [
+    "F20"
+   ]
+  },
+  "F253": {
+   "map": "F20_F25/F20_F25_Fire Isochrones.jpg",
+   "px_per_m": 12.3,
+   "scale_source": "tabulated head distances",
+   "ignition_px": [
+    2498,
+    3779
+   ],
+   "curves": {
+    "t335": 335,
+    "t229": 229
+   },
+   "search_px": 22,
+   "jump_px": 10,
+   "wind_log": "F20_F25/F25_2mwind.csv",
+   "plot": "F25",
+   "neighbours": "point fires F251 and F252 lit at the same time; line fire F20 lit 300 s later",
+   "plot_line_fires": [
+    "F20"
+   ]
+  }
+ },
+ "excluded": {
+  "CS83": "map is a composite of two photographs whose seam crosses the fire; outer isochrones merge",
+  "CS92": "spot fire ahead of the head merged with the main perimeter; later isochrones overlap a neighbouring line fire",
+  "ES62": "ignited near the plot edge; isochrones after 36 s truncated by the plot boundary",
+  "FS63": "spotting across the firebreak",
+  "FS82": "isochrones broken by a firebreak and overlapping flame-depth hatching; final isochrone truncated by the plot boundary"
+ },
+ "ten_m_ratio": {
+  "E1": 1.243,
+  "T1": 1.225,
+  "source": "median 10mWind.ms / 2mWind.ms of the line-ignition plots with the same fuel treatment (Plot_Average_Data.csv)"
+ }
+}

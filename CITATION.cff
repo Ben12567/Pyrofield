@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this code or its outputs, please cite it as below."
+title: "A good fire fit is not enough: code and outputs"
+type: software
+authors:
+  - family-names: Dong
+    given-names: Xin
+    affiliation: "School of Rescue and Command, China People's Police University; Emergency Rescue Technology Key Laboratory of Hebei Province"
+  - family-names: Yan
+    given-names: Tuo
+    affiliation: "School of Rescue and Command, China People's Police University"
+  - family-names: Shen
+    given-names: Jun
+    affiliation: "School of Rescue and Command, China People's Police University"
+  - family-names: Li
+    given-names: Chiyuan
+    affiliation: "School of Rescue and Command, China People's Police University"
+  - family-names: Zhang
+    given-names: Tianwei
+    affiliation: "School of Rescue and Command, China People's Police University"
+license: MIT
+keywords:
+  - wildfire spread
+  - identifiability
+  - equifinality
+  - data assimilation
+  - profile likelihood
+  - fire perimeter
+references:
+  - type: dataset
+    title: "1986 Annaburroo Experimental Grassland Fire Data"
+    authors:
+      - family-names: Gould
+        given-names: Jim
+      - family-names: Gomes Da Cruz
+        given-names: Miguel
+      - family-names: Sullivan
+        given-names: Andrew
+    publisher:
+      name: CSIRO
+    year: 2023
+    doi: 10.25919/ycd3-w209
+
+version: "2026.10.21"
+date-released: "2026-10-21"
+repository-code: "https://github.com/Ben12567/Pyrofield"
