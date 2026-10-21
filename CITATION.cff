@@ -41,6 +41,6 @@ references:
     year: 2023
     doi: 10.25919/ycd3-w209
 
-version: "2026.10.21"
+version: "2026.10.21-r2"
 date-released: "2026-10-21"
 repository-code: "https://github.com/Ben12567/Pyrofield"

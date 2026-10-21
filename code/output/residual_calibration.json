@@ -1,0 +1,166 @@
+{
+  "design": "Additional parametric Monte Carlo calibration, independent validation; known covariance conditional on generating geometry.",
+  "training_design": {
+    "U_range": [
+      2,
+      7
+    ],
+    "R0_range": [
+      0.06,
+      0.16
+    ],
+    "frames": 4,
+    "bearings": 72,
+    "sigma_over_D": 0.03
+  },
+  "nominal_tail_probability": 0.01,
+  "cases_total": 8000,
+  "settings": {
+    "0.0": {
+      "calibration_n": 2000,
+      "calibration_seed": 2026102100,
+      "rank_1based": 1981,
+      "threshold": 2.0357611651500958,
+      "validation": [
+        {
+          "design": "matched",
+          "ell_true": 0.0,
+          "n": 1000,
+          "calibrated_flagged": 9,
+          "calibrated_rate": 0.009,
+          "cp95": [
+            0.004123395660342473,
+            0.017015783069894586
+          ],
+          "legacy_z2_33_flagged": 3,
+          "median_z": -0.3560167096821145
+        },
+        {
+          "design": "mismatched",
+          "ell_true": 0.3,
+          "n": 1000,
+          "calibrated_flagged": 1000,
+          "calibrated_rate": 1.0,
+          "cp95": [
+            0.9963179161031344,
+            1.0
+          ],
+          "legacy_z2_33_flagged": 1000,
+          "median_z": 13.628109194049216
+        }
+      ]
+    },
+    "0.1": {
+      "calibration_n": 2000,
+      "calibration_seed": 2026102101,
+      "rank_1based": 1981,
+      "threshold": 2.055366229329644,
+      "validation": [
+        {
+          "design": "matched",
+          "ell_true": 0.1,
+          "n": 1000,
+          "calibrated_flagged": 3,
+          "calibrated_rate": 0.003,
+          "cp95": [
+            0.0006190999316495713,
+            0.008742023238478303
+          ],
+          "legacy_z2_33_flagged": 0,
+          "median_z": -0.4033659222967396
+        },
+        {
+          "design": "mismatched",
+          "ell_true": 0.3,
+          "n": 1000,
+          "calibrated_flagged": 277,
+          "calibrated_rate": 0.277,
+          "cp95": [
+            0.2494534420070102,
+            0.30586607658417714
+          ],
+          "legacy_z2_33_flagged": 213,
+          "median_z": 1.3108249775853476
+        }
+      ]
+    }
+  },
+  "archived_profile_comparison": {
+    "all": {
+      "n": 1140,
+      "guard_c4_determined": 784,
+      "profile_c3_84_within_window": 791,
+      "agreement": 1133,
+      "guard_yes_interval_no": 0,
+      "guard_no_interval_yes": 7,
+      "note": "Thresholds differ: guard c=4, archived interval c=3.84. Bounds can downgrade guard decisions."
+    },
+    "correct_specification": {
+      "n": 720,
+      "guard_c4_determined": 460,
+      "profile_c3_84_within_window": 467,
+      "agreement": 713,
+      "guard_yes_interval_no": 0,
+      "guard_no_interval_yes": 7,
+      "note": "Thresholds differ: guard c=4, archived interval c=3.84. Bounds can downgrade guard decisions."
+    }
+  },
+  "capped_false_determinations": {
+    "n": 6,
+    "cap_wind": 8.492438279265544,
+    "cases": [
+      {
+        "U_true": 10.959007302936321,
+        "U_hat": 8.151354818778284,
+        "upper_displaced_wind": 10.59676126441177,
+        "DU_c4": 7.899406640390225,
+        "upper_displacement_on_plateau": true
+      },
+      {
+        "U_true": 9.207231265851846,
+        "U_hat": 8.193325461100084,
+        "upper_displaced_wind": 10.65132309943011,
+        "DU_c4": 6.648225448467144,
+        "upper_displacement_on_plateau": true
+      },
+      {
+        "U_true": 10.743593635079526,
+        "U_hat": 8.230978939929615,
+        "upper_displaced_wind": 10.7002726219085,
+        "DU_c4": 4.65088475288087,
+        "upper_displacement_on_plateau": true
+      },
+      {
+        "U_true": 11.303684480062369,
+        "U_hat": 8.252121863272897,
+        "upper_displaced_wind": 10.727758422254768,
+        "DU_c4": 4.184489413251725,
+        "upper_displacement_on_plateau": true
+      },
+      {
+        "U_true": 9.74774707592813,
+        "U_hat": 8.245055079158957,
+        "upper_displaced_wind": 10.718571602906644,
+        "DU_c4": 4.1409238518133975,
+        "upper_displacement_on_plateau": true
+      },
+      {
+        "U_true": 10.555249891634595,
+        "U_hat": 8.220283729717154,
+        "upper_displaced_wind": 10.686368848632302,
+        "DU_c4": 4.8269014162247,
+        "upper_displacement_on_plateau": true
+      }
+    ],
+    "interpretation": "The sampled upper profile point is already on the capped plateau. A full profile displays this plateau but cannot ensure its inclusion in the nominal interval; noise can exclude the entire plateau."
+  },
+  "reference_fit_checks": {
+    "n": 48,
+    "seed": 2026102300,
+    "max_cost_absolute_error": 2.8421709430404007e-13,
+    "max_z_absolute_error": 4.042168733064955e-08,
+    "method": "Independent two-parameter bounded least squares in (log R0, log U), two starts; comparison cases excluded from all calibration and validation rates."
+  },
+  "elapsed_seconds": 13.394445899990387,
+  "limitations": "Design-averaged calibration, not a per-fire fitted-model bootstrap or a validation on observed operational fires."
+}

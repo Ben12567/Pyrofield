@@ -11,6 +11,8 @@ four figures in the current manuscript.
 python -m pip install -r code/requirements.txt
 python code/validate_deposit.py
 python code/prepare_figure3_records.py --out figure3_source
+# Independent residual calibration and archived profile comparisons
+python code/residual_calibration.py --out residual_calibration_run
 # Full analysis; overwrites numerical files in code/output
 python code/run_all.py
 ```
@@ -33,6 +35,7 @@ The full analysis previously took about one hour; hardware affects runtime.
 | `guard_benchmark.py` | 1,000 labelled inversions: five classes and two error models |
 | `refit_factorial.py` | Sensitivity to refit starting point, iterations and damping |
 | `graded_benchmark.py` | 1,140 graded inversions: precision, priors and interval coverage |
+| `residual_calibration.py` | 8,000 separately seeded residual-calibration/validation cases; 48 independent fit checks; archived interval and cap checks |
 | `misspecification_checks.py` | Dilation; 240 residual-diagnostic and 60 unknown-geometry inversions |
 | `benchmark_tables.py` | Final bound-aware decisions and conditional coverage summaries |
 | `mismatch_scenarios.py` | 780 additional inversions under time-varying wind and heterogeneous fuel |
@@ -56,7 +59,10 @@ an earlier treatment of bounds and must not replace the final table summaries.
 
 The 2,440 core inversions are 1,000 labelled, 1,140 graded, 240 covariance
 diagnostic and 60 unknown-bearing/ignition cases. The 780 model-mismatch
-inversions are additional. Current Figure 3b pools the 2,140 archived paired
+inversions and 8,000 independent residual-calibration/validation cases are
+additional. The 48 reference-fit checking cases are excluded from all rates.
+Residual calibration averages over the stated synthetic design and assumes
+covariance anchored to the generating geometry; it is not a per-fire bootstrap. Current Figure 3b pools the 2,140 archived paired
 labelled and graded records. This pooled display includes different assumptions
 and unidentifiable cases; it is not an overall accuracy or coverage estimate.
 

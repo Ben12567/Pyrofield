@@ -14,6 +14,8 @@ python -m venv .venv
 python -m pip install -r code/requirements.txt
 python code/validate_deposit.py
 python code/prepare_figure3_records.py --out figure3_source
+# Additional independent residual calibration (separate output folder)
+python code/residual_calibration.py --out residual_calibration_run
 # Full analysis; regenerates and overwrites code/output
 python code/run_all.py
 ```
@@ -29,6 +31,16 @@ original analytical plots and current editable PowerPoint figures.
 also include 240 residual-diagnostic and 60 unknown-geometry inversions, whose
 summaries are archived but whose paired per-case winds were not retained here.
 Current Figure 3b contains the 2,140 archived labelled and graded pairs.
+
+The revised methods paper adds 8,000 independently seeded calibration and
+validation cases for the residual screen. They are archived separately as
+`code/output/residual_calibration_cases.csv`, with thresholds, exact binomial
+intervals, 48 independent optimiser checks and profile comparisons in
+`code/output/residual_calibration.json`. These simulations do not change the
+original figure coordinates or the core benchmark counts. Calibration averages
+over the stated synthetic design and assumes covariance anchored to generating
+geometry; it is not a per-fire fitted-model bootstrap. Full profiles can expose
+a capped plateau without guaranteeing that a nominal interval includes it.
 
 `code/annaburroo/` contains the seven-fire selection, digitising anchors and
 analysis tools. Original maps and wind measurements are available from CSIRO:
